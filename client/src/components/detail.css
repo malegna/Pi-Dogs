@@ -1,0 +1,26 @@
+.detail {
+    background-color: #ac8971;
+    text-decoration: "none";
+    border-radius: 1vw;
+    width: 40vw;
+    border: .1em solid #ac8971;
+    display: flex;
+    flex-direction: center;
+    justify-items: center;
+    align-content: center;
+    text-align: center;
+    padding: 0.1vw;
+    margin: auto;
+    height: 80vh;
+    flex-grow: 2;
+    margin-top: 70px;
+   
+  }
+.img-dogs {
+    align-self: center;
+    border-radius: 30px;
+    width: 500px;
+    height: 350px;
+    padding: .51em;
+    text-decoration: "none";
+  }

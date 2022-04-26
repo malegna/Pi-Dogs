@@ -1,10 +1,15 @@
 import React from 'react';  
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector} from 'react-redux'; 
-import { getDogs, getTemperaments, filterCreated, orderName } from '../actions';
+import { getDogs, getTemperaments, filterCreated, orderName, orderWeight } from '../actions';
 import { Link } from 'react-router-dom';
 import Card from './Card.jsx';
 import Paginado from './Paginado';
+import SearchBar from './SearchBar';
+import "./Home.css";
+
+
+
 
 export default function Home (){
     //paginado
@@ -23,6 +28,7 @@ export default function Home (){
 
     //order
     const [orden, setOrden] = useState("") // estado local vacio 
+    const [peso, setPeso] = useState ("")
     
    
 
@@ -61,12 +67,23 @@ export default function Home (){
         dispatch(filterCreated(e.target.value))
     }
 
-    function handlerSort (e){
+    function handlerSortAsDe(e){
         e.preventDefault();
         dispatch(orderName(e.target.value))
         setCurrentPage(1); // seteame la pagina en la primera 
         setOrden(`Ordenado ${e.target.value}`) // setOrder para que cuando yo setee la pagina, me modifique el estado local y me renderice. set modifica estados
     };
+
+    function handlerWeight(e){
+        e.preventDefault();
+        dispatch(orderWeight(e.target.value))
+        setCurrentPage(1);
+        setPeso(`Ordenado ${e.target.value}`)
+    }
+
+
+
+
     // function handlerFilterCreated (e){
     //     if (
     //         e.target.value === 'original' ||
@@ -80,18 +97,38 @@ export default function Home (){
 
     return (
         <div>
-            <Link to ='/dogs'>Crear Perrito</Link>
-            <h1>Pagina de Perritos</h1> 
-            <button onClick={e=>{handleClick(e)}}>
-                Volver a cargar perritos</button>
-            <div>
-                <select onChange = {e =>handlerSort(e)}>
-                    <option value= 'asc'> Asendente</option> 
-                    <option value = 'des'> Desendente</option>
-                </select>
+            <div className='Nav'>
+            <Link to ='/dog'>CREAR PERRO</Link>
+            </div>
+            
+            <div className='center'>
+            <h1>PAGINA DE PERROS</h1> 
+            </div>
 
+            <div className='Reset'>
+            <button onClick={e=>{handleClick(e)}}>
+                Volver a Cargar Perros</button>
+                </div>
+            <div>
+            <div className='Order'>
+                <select onChange = {e =>handlerSortAsDe(e)}>
+                    <option value="">Orden Alfabetico</option>
+                    <option value= 'asc'> A a Z</option> 
+                    <option value = 'des'> Z a A</option>
+                </select>
+               
+                
+
+                <select onChange = {e =>handlerWeight(e)}>
+                    <option value="">Orden por Peso</option>
+                    <option value= 'LIGHTEST'> Mas Liviano a mas Pesado</option> 
+                    <option value = 'HEAVIEST'> Mas Pesado a mas Liviano</option>
+                </select>
+                </div>
+
+                <div className='Filter'>
                 <select onChange={temperamentChange}>
-                    <option value ={''}> --by Temperaments </option>
+                    <option value ={''}> Filtro por Temperamentos </option>
                     {temperaments ? (temperaments.map((el)=>{
                         return (
                             <option key={el.id} value={el.name} > {el.name}</option>
@@ -101,7 +138,9 @@ export default function Home (){
                         <option>Temperaments</option>
                       )}
                 </select>
-                <div className="dogs-container">
+                </div>
+                
+               
                 {temperamentSelected &&
                     currentDogs
                     .filter((dog) => dog.temperament?.includes(temperamentSelected))
@@ -113,9 +152,10 @@ export default function Home (){
                             weight={dog.weight}
                             />
                     ))}
-                    </div>
-
+                   
+                    <div>
                 <select onChange={e => handlerFilterCreated(e) }>
+                <option value="">Orden Por Razas</option>
                     <option value = 'all'>Todas las Razas</option>
                     <option value = 'created'>Creados</option>
                     <option value = 'original'>Existente(Traidos de la api)</option>
@@ -125,20 +165,30 @@ export default function Home (){
                 allDogs = {allDogs.length}
                 paginado ={paginado}
                 />
+                </div>
+                
+                <SearchBar/>
+                </div>
+                
+                <div className='todos'>
                 {
                    currentDogs?.map((element) =>{
                         return (
                             <div>
-                                <Link to = {"/home"}>
-                                <Card name={element.name} img={element.img} weigth={`${element.weight} kg`} temperament={element.temperament}/>
+                                <Link to = {"/dogs/"+ element.id}>
+                                <Card name={element.name} 
+                                img={element.img} 
+                                weigth={!element.create ? element.weight + ` kg`: `${element.weight.min ? element.weight.min : ""} ${
+                                    element.weight.max ? " - " + element.weight.max : ""}  kg`} 
+                                temperament={!element.create ? element.temperament + ' ' : element.temperaments.map(el => el.name + (' ,'))} key={element.id}/>
                                 </Link>
                             </div>
                         )
                     })
                 }
-                
+                </div>
             </div>
-        </div>
+        
     )
 }
 

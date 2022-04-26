@@ -18,6 +18,22 @@ export function getDogs(){
 //         payload
 //     };
 // }
+
+export function getSearchNAme(name){
+    return async function(dispatch){
+        try{
+            var json = await axios.get('http://localhost:3001/dogs?name='+ name);
+            return dispatch({
+                type: 'GET_SEARCH_NAME',
+                payload: json.data
+
+            })
+        } catch(error){
+            console.log(error)
+        }
+    }
+}
+
 export function getTemperaments(){
     return async function(dispatch){
         var json = await axios.get(`http://localhost:3001/temperament`);
@@ -25,6 +41,13 @@ export function getTemperaments(){
             type: "TEMPERAMENTOS",
             payload: json.data
         });
+    }
+}
+
+export function postDog(payload){
+    return async function (dispatch){
+        const json = await axios.post('http://localhost:3001/dog', payload);
+        return json;
     }
 }
 export function filterCreated(payload){
@@ -41,6 +64,26 @@ export function orderName(payload){
         payload
     }
 
+}
+export function orderWeight(payload){
+    return {
+        type: 'ORDER_WEIGHT',
+        payload
+    }
+}
+
+export function getDetail(id){
+    return async function (dispatch){
+        try {
+            var json = await axios.get('http://localhost:3001/dogs/' + id);
+            return dispatch ({
+                type: 'GET_DETAILS',
+                payload: json.data
+            })
+        } catch (error) {
+            
+        }
+    }
 }
 // useEffect(() => {
 //     axios.get(`http://localhost:3001/temperamentos`) 

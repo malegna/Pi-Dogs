@@ -3,7 +3,8 @@
 const initialState = {
     dogs : [],
     allDogs : [],
-    temperaments : []
+    temperaments : [],
+    detail: []
 }
 
 
@@ -15,6 +16,15 @@ function rootReducer (state = initialState, action){
                 dogs : action.payload,
                 allDogs: action.payload
             };
+            case 'GET_SEARCH_NAME':
+                return {
+                    ...state,
+                    dogs: action.payload
+                }
+            case 'POST_DOG':
+                return{
+                    ...state,
+                }
 
             case "TEMPERAMENTOS": 
             return {
@@ -23,10 +33,10 @@ function rootReducer (state = initialState, action){
             };
 
             case 'FILTER_CREATED':
-            const createdFilter = action.payload === 'created' ? state.allDogs.filter(el => el.create) : state.allDogs.filter(el => !el.create)
+            const createdFilter = action.payload === 'created' ? state.allDogs.filter(el => el.create) : state.allDogs.filter(el => ! el.create)
             return {
                 ...state,
-                dogs: action.payload === 'All' ? state.allDogs : createdFilter
+                dogs: action.payload === 'all' ? state.allDogs : createdFilter
             };
             case 'ORDER_NAME':
                 let sortName = action.payload === 'asc' ?
@@ -53,10 +63,21 @@ function rootReducer (state = initialState, action){
                     ...state,
                     dogs: sortName
                 }
-
-
-
-
+                case 'ORDER_WEIGHT':
+                    let sortLi= action.payload === 'LIGHTEST' ?
+                    state.dogs.sort((a,b) => parseInt(a.weight) - parseInt(b.weight)) :
+                    state.dogs.sort((a,b) => parseInt(b.weight) - parseInt(a.weight))
+                return {
+                    ...state,
+                    dogs: sortLi
+                }
+                case 'GET_DETAILS':
+                    return{
+                        ...state,
+                        detail: action.payload
+                    }
+            
+            
             // case 'FILTER_CREATED':
             //     const allDogs2 = state.allDogs
             //     const createdfilter = action.payload === 'all' ? allDogs2 : allDogs2.filter((el) => isOriginal(el)) === action.payload

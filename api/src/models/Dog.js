@@ -32,7 +32,8 @@ module.exports = (sequelize) => {
     },
     create: {
       type: DataTypes.BOOLEAN, // me ayuda a acceder a los perros que cree en base de datos. 
-      dafaulValue: true, //se usa cuando uso un valor bolleano para darle un valor por defecto de true.
-    },
+      dafaultValue: true,
+      allowNull: false, //se usa cuando uso un valor bolleano para darle un valor por defecto de true.
+    }
   });
 };

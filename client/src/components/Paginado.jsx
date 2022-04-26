@@ -1,4 +1,5 @@
 import React from "react";
+import "./Home.css";
 
 export default function Paginado ({dogsPage, allDogs, paginado}){
     const pagesNumbers = []
@@ -12,8 +13,8 @@ export default function Paginado ({dogsPage, allDogs, paginado}){
                 {pagesNumbers &&
                 pagesNumbers.map(number=>(
                     <li className="number">
-                    <a onClick={()=> paginado(number)}>{number}
-                    </a>
+                    <span className="separador"> | </span><button onClick={()=> paginado(number)}>{number}
+                    </button>
                     </li>
                 ))}
             </ul>

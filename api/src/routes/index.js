@@ -44,13 +44,14 @@ const getAllDog = async () => {
 }
 
 router.get('/dogs', async (req, res)=>{
+    //aqui van las dos rutas la de dogs y http://localhost:3001/dogs?name=
     const name = req.query.name
     let dogsTotal = await getAllDog();
     if(name){
         let dogsName = await dogsTotal.filter(element => element.name.toLowerCase().includes(name.toLowerCase()))
         dogsName.length ?
         res.status(200).send(dogsName) :
-        res.status(404).send('No existe en Perro');
+        res.status(404).send('No existe el Perro');
     } else {
         res.status(200).send(dogsTotal);
     }
@@ -106,7 +107,8 @@ router.post('/dog', async (req,res)=>{
         height,
         weight,
         life_span,
-        temperament
+        temperament,
+        create
     } = req.body;
 
     let dogCreated = await Dog.create ({
@@ -115,6 +117,7 @@ router.post('/dog', async (req,res)=>{
         height,
         weight,
         life_span,
+        create
     });
     let temperamentDB = await Temperaments.findAll({
         where :{name : temperament}
