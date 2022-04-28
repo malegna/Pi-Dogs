@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { postDog, getTemperaments } from '../actions/index';
 import { useDispatch, useSelector } from 'react-redux';
+import "./DogCreate.css";
 
 function validate(input){
     let errors ={};
@@ -61,7 +62,7 @@ export default function CreateDogs(){
     function handlerChange(e){ // controla cada vez que cambien o se modifiquen mis inputs 
         setInput({
             ...input, // traete todo lo que tengas en ese estado
-            [e.target.name] : e.target.value// guardame o modificame (setear) el valor que tengo por el que selecciona el usuario (todo los names)
+            [e.target.name] : e.target.value // guardame o modificame (setear) el valor que tengo por el que selecciona el usuario (todo los names)
         })
         setErrors(validate({
             ...input,
@@ -162,14 +163,15 @@ export default function CreateDogs(){
     
 
     return (
-        <div>
+        <div className='formulario'>
             <Link to= '/home'> <button>Volver</button> </Link>
             <h1>Crea tu Personaje!</h1>
 
             <form onSubmit={(e) => handlerSubmit(e)}>
-                <div>
+               
                     <label>Nombre</label>
-                    <input
+                
+                    <input className='estilo'
                     type= 'text'
                     value= {input.name}
                     name= 'name'
@@ -178,10 +180,11 @@ export default function CreateDogs(){
                     {errors.name && (
                             <p className='error'>{errors.name}</p>
                         )}
-                </div>
+               
 
                 <div>
                     <label>Altura (cm)</label>
+                    <div className="MinMax">
                     <label>Min:</label>
                     <input
                     type= 'number'
@@ -202,11 +205,12 @@ export default function CreateDogs(){
                     step={5}
                     />  
                     {errors.height && <p className="error">{errors.height}</p>}
+                    </div>
                 </div>
 
                 <div>
                     <label>Peso (kg)</label>
-                    
+                    <div className="MinMax">
                     <label>Min:</label>
                     <input
                     type= 'number'
@@ -227,11 +231,13 @@ export default function CreateDogs(){
                     step={5}
                     />
                     {errors.weight && <p className="error">{errors.weight}</p>}
+                    </div>
                 </div>
 
                 <div>
                     <label>Años de Vida</label>
                     <input
+                    className='estilo'
                     type='text'
                     value={input.life_span}
                     name='life_span'
@@ -245,18 +251,24 @@ export default function CreateDogs(){
 
                 <div>
                 <label>Temperamentos: </label>
-                    <select onChange ={(e)=> handlerSelect(e)}>
+                    <select className='estilo' onChange ={(e)=> handlerSelect(e)}>
                         {temperamentos.map((temp) =>(
                             <option value={temp.name}>{temp.name}</option>
                         ))}
                     </select>
-                    <ul><li>{input.temperament.map(el => el + " ,")}</li></ul>
+                    <ul>{input.temperament.map(el =>
+                <div className='divTem'> 
+                <p>{el}</p>
+                <button onClick={()=>handlerDelete(el)}>X</button>
+                </div>
+                )}</ul>
                     {errors.temperament && <p className="error">{errors.temperament}</p>}
                 </div>
 
                 <div>
                     <label>Imagen</label>
                     <input
+                    className='estilo'
                     type='text'
                     value={input.img}
                     name='img'
@@ -268,12 +280,7 @@ export default function CreateDogs(){
 
                 <button type='submit'>Crear Personaje</button>
             </form>
-            {input.temperament.map(el =>
-                <div className='divTem'> 
-                <p>{el}</p>
-                <button className='botonX' onClick={()=>handlerDelete(el)}>X</button>
-                </div>
-                )}
+            
         </div>
     )
 

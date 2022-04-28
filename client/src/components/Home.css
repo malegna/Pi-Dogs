@@ -8,12 +8,13 @@
   }
   
   .Filter {
-    padding:10px 10px;
+    padding: 10px 10px;
+    flex-direction:column;
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: center;
   }
+  
   
   .Order {
     padding: 10px 10px;
@@ -44,31 +45,11 @@
     list-style:none;
     
   }
-  
-  .Num {
-    margin: 2px;
-    background-color: #494949;
-    color: #b8d3ee;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    float: left;
-    width: 3em;
-  }
-  
-  .Num:hover {
-    background: #b8d3ee;
-    color: #494949;
-  
-    text-decoration: none;
-  }
   .Reset:hover {
     background: #ac8971;
     color: #43312f;
     width: 10px 10px;
   }
-
   .center {
   padding: 1em;
   align-items: center;
@@ -81,11 +62,4 @@
     align-items: center;
     justify-content: center;
     box-shadow: 2px 5px 16px #43312f;
-  
   }
-  .link {
-    margin: center;
-    padding: 0;
-    font-size: 80px;
-  }
-  

@@ -4,8 +4,8 @@ import "./Home.css";
 export default function Paginado ({dogsPage, allDogs, paginado}){
     const pagesNumbers = []
 
-    for (let i=0; i <= Math.ceil(allDogs/dogsPage); i++){
-        pagesNumbers.push(i+1)
+    for (let i=1; i <= Math.ceil(allDogs/dogsPage); i++){
+        pagesNumbers.push(i)
     }
     return (
         <nav>

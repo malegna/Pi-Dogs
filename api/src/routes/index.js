@@ -6,12 +6,15 @@ const { Router } = require('express');
 const axios = require('axios');
 const { Dog, Temperaments } = require ('../db');
 const { json } = require('body-parser');
+const {
+    API_KEY,
+  } = process.env;
 
 const router = Router();
 
 const getInfoApi = async () => {
-    const apiUrl = await axios.get('https://api.thedogapi.com/v1/breeds?api_key=a64ddc65-88f8-47ce-b7af-052639d2419b'); // pendiente enviar la api a .env
-    const apiInfo = await apiUrl.data.map(element => {
+    const apiUrl = await axios.get(`https://api.thedogapi.com/v1/breeds?api_key=${API_KEY}`); 
+    const apiInfo = await apiUrl.data.map(element => { 
         return {
             name: element.name,
             id: element.id,
@@ -70,13 +73,7 @@ router.get ('/dogs/:id', async (req,res)=>{
   }) 
 
 router.get('/temperament', async (req, res)=>{
-    // let getTemperaments = await Temperaments.findAll();
-    // getTemperaments = JSON.stringify(getTemperaments,null,2)
-    // getTemperaments= JSON.parse(getTemperaments)
-    //  if(getTemperaments.length !==0){
-    //     res.send(getTemperaments);
-    //  }else{
-    const  temperamentApi = await axios.get('https://api.thedogapi.com/v1/breeds?api_key=a64ddc65-88f8-47ce-b7af-052639d2419b')
+    const  temperamentApi = await axios.get(`https://api.thedogapi.com/v1/breeds?api_key=${API_KEY}`)
     let temperamentosfinal = [];
     const temperaments = temperamentApi.data.map(element => element.temperament) //sacamos la informacion de los temperamentos en un nuevo array
     const newTemperaments = temperaments.map((element) => element && element.split(", ")).flat()
@@ -89,11 +86,6 @@ router.get('/temperament', async (req, res)=>{
             where : { name: el }
         })
     })
-    // for(let i = 0; i <124; i++){
-    //     await Temperaments.create({
-    //         name: temperamentosfinal[i] 
-    //     })
-    // }
     let getTemperaments = await Temperaments.findAll();
     if(getTemperaments.length !==0){
         res.send(getTemperaments);
@@ -126,7 +118,7 @@ router.post('/dog', async (req,res)=>{
     res.send ('Perro creado con éxito')
 })
     
-// })
+
 
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);

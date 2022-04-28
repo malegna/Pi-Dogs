@@ -10,7 +10,7 @@ export default function Detail(props){
 
     useEffect (()=>{
         dispatch(getDetail(props.match.params.id)); // para acceder al id desde el params
-    },[dispatch])
+    })
 
     const myDog = useSelector ((state) => state.detail) // nos traemos el estdo global del reducer. 
 
