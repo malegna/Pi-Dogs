@@ -16,7 +16,14 @@ function handlerInputChange(e){
 
 function handlerSubmit(e){
     e.preventDefault();
-    dispatch(getSearchNAme(name)) // lo que he guardao que escribio el usuario , es mi accion a despachar 
+    if (name){
+        dispatch(getSearchNAme(name))
+    }else{
+        alert( " Perro no existe ")
+    }
+
+
+    
 }
     return (
         <div className="Search">

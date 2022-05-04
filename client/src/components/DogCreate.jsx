@@ -61,7 +61,7 @@ export default function CreateDogs(){
 
     function handlerChange(e){ // controla cada vez que cambien o se modifiquen mis inputs 
         setInput({
-            ...input, // traete todo lo que tengas en ese estado
+            ...input,
             [e.target.name] : e.target.value // guardame o modificame (setear) el valor que tengo por el que selecciona el usuario (todo los names)
         })
         setErrors(validate({
@@ -109,9 +109,10 @@ export default function CreateDogs(){
     }
 
     function handlerSelect(e){
+        
         setInput({
             ...input,
-            temperament: [...input.temperament, e.target.value] // en el arreglo de temperaments guardo lo que tenga el input en temp y le voy agregando los select seleccionados 
+            temperament: input.temperament.includes(e.target.value) ? [...input.temperament ] : [...input.temperament, e.target.value] // en el arreglo de temperaments guardo lo que tenga el input en temp y le voy agregando los select seleccionados 
         })
         setErrors(validate({
             ...input,
