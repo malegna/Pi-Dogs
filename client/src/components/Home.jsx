@@ -83,7 +83,7 @@ export default function Home (){
             </div>
             
             <div className='center'>
-            <h1>PAGINA DE PERRITOS</h1> 
+            <h1>PAGINA DE PERRITos</h1> 
             </div>
 
             <div className='Reset'>
