@@ -25,6 +25,7 @@ export function getSearchNAme(name){
             })
         } catch(error){
             console.log(error)
+            alert('Perro no Existe!')
         }
     }
 }

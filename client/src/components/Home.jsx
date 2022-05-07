@@ -83,7 +83,7 @@ export default function Home (){
             </div>
             
             <div className='center'>
-            <h1>PAGINA DE PERROS</h1> 
+            <h1>PAGINA DE PERRITOS</h1> 
             </div>
 
             <div className='Reset'>
@@ -136,7 +136,7 @@ export default function Home (){
                 paginado ={paginado}
                 />
                
-                <SearchBar/>
+                <SearchBar />
                 </div>
                 
                 <div className='todos'>

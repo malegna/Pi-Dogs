@@ -16,14 +16,7 @@ function handlerInputChange(e){
 
 function handlerSubmit(e){
     e.preventDefault();
-    if (name){
         dispatch(getSearchNAme(name))
-    }else{
-        alert( " Perro no existe ")
-    }
-
-
-    
 }
     return (
         <div className="Search">

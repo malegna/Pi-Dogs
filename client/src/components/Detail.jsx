@@ -36,6 +36,15 @@ export default function Detail(props){
             <Link to = '/home' >
             <button>Volver</button>
             </Link>
+            {
+                myDog.create ?
+                <div>
+                    <button>Editar</button>
+                    <button>Eliminar</button>
+
+                </div> :<button>Eliminar</button>
+            }
+            
 
         </div>
 
