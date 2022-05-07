@@ -13,7 +13,8 @@ export default function LandingPage (){
                 </div>
                 </div>
                 <Link to = '/home'>
-                    <button>Ingresar</button>
+                    <button className="Ingreso"
+                    >Ingresar</button>
                 </Link>
                 <div className="Zeus">
                 <img src={Zeus} class = "Zeus" alt="imagen de Zeus"/>
