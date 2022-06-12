@@ -1,6 +1,6 @@
 
 .landing {
-    background-color: black;
+    background-color: whitesmoke;
     display: flex;
     flex-direction: row;
     color: #494949;
@@ -12,26 +12,28 @@
   
   .Titulo {
     font-family: "Abril Fatface", cursive;
-    color: azure;
+    font-size: 50px;
+    color: black;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     align-self:center;
     align-content: center;
-    width: 700px;
-    padding: 100 px;
+    width: 500px;
+    height: 50px;
+    margin-top: 50PX;
+    margin-bottom: -100px;
   
   }
   .Zeus{
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
     align-items: center;
-    max-width: 200%;
-    max-height: 200%;
-    margin: 0;
+    width: 67%;
+    height: 50%;
+    margin-top: -31%;
   }
   .Ingreso{
     -webkit-border-radius: 7;
@@ -43,6 +45,9 @@
     background: #494949;
     padding: 11px 20px 10px 20px;
     text-decoration: none;
+    float: right;
+    margin-right: 300px;
+    margin-top: 200px;
   }
   .Ingreso:hover {
     color: #494949;
@@ -53,6 +58,8 @@
     border-radius: 1rem;
   }
   .fondo{ 
-    background-color: black;
-    padding: 200px;
+    background-color: whitesmoke;
+    padding: 10px;
   }
+
+  @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');

@@ -63,3 +63,12 @@
     justify-content: center;
     box-shadow: 2px 5px 16px #43312f;
   }
+.left {
+  font-size: 20px;
+}
+.Logo {
+  font-family: "Abril Fatface", cursive;
+  font-size: 40px;
+  display: flex;
+  flex-direction: row;
+}

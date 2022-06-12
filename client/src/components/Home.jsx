@@ -79,11 +79,20 @@ export default function Home (){
     return (
         <div>
             <div className='Nav'>
-            <Link to ='/dog'>CREAR PERRO</Link>
+            <div className='Logo'>
+            <Link to ='/dog'>
+            <div className="Left">
+              <h5>CREAR NUEVA RAZA</h5>
+            </div>
+            <div>
+          DoggoLand
+          </div>
+            </Link>
+            </div>
             </div>
             
             <div className='center'>
-            <h1>PAGINA DE PERRITos</h1> 
+            <h1>PAGINA DE PERRITOS</h1> 
             </div>
 
             <div className='Reset'>
