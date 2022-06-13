@@ -15,10 +15,13 @@ export default function LandingPage (){
                 <h1>ZEUS APP</h1>
                 </div>
                 </div>
+
+                
                 <Link to = '/home'>
                     <button className="Ingreso"
-                    >Ingresa Aqui</button>
+                    >Ingresa Aquí</button>
                 </Link>
+                
                 <div className="Zeus">
                 <img src={Zeus4} class = "Zeus" alt="imagen de Zeus"/>
                 </div>
