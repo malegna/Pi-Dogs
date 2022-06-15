@@ -1,7 +1,7 @@
 body{
   display: flex;
   flex-direction: column;
-  background-color: #b8eeee;
+  background-color: whitesmoke;
   background-repeat: no-repeat;
   background-position: bottom ;
   background-attachment: fixed;
@@ -37,7 +37,7 @@ body{
 }
 
 .App-link {
-  color: #61dafb;
+  color: black;
 }
 
 @keyframes App-logo-spin {

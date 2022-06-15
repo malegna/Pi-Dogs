@@ -1,7 +1,7 @@
 .todos {
     display: flex;
     flex-flow: row wrap;
-    background: #43312f;
+    background: whitesmoke;
     justify-content: center;
     align-items: center;
     padding: 0.5em 1em;
@@ -26,7 +26,7 @@
   
   .Reset {
     margin: 5px;
-    background-color: #43312f;
+    background-color: black;
     color: white;
     padding: 10px 10px;
     border: none;
@@ -46,7 +46,7 @@
     
   }
   .Reset:hover {
-    background: #ac8971;
+    background: #D9D9D9;
     color: #43312f;
     width: 10px 10px;
   }
@@ -56,17 +56,18 @@
   }
 
   .Nav {
-    background: #ac8971;
+    background: black;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 2px 5px 5px  #43312f;
+    box-shadow: 2px 5px 5px  #282c34;
     margin-top: -40px;
     margin-bottom: 10px;
   }
   .Nav h3{
     display:inline-block;    
+    color: whitesmoke;
   }
   .Nav h6 {
     display: flex;
@@ -74,6 +75,7 @@
     justify-content: space-between;
     font-size: 20px;
     margin-top: 65px;
+    color: whitesmoke;
   }
   
 .Logo {
@@ -95,10 +97,12 @@
 .TopBoard{
   display: flex;
   flex-direction: row;
-  background: #cdf3f3;
+  background: #C4C4C4;
+  box-shadow: 2px 5px 5px  #282c34;
   justify-content: center;
   align-items: center;
   padding: 0.5em 1em;
+  color: #C4C4C4;
 }
 .Filter {
   padding: 0em 1em;

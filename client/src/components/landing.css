@@ -41,9 +41,9 @@
     -moz-border-radius: 7;
     border-radius: 7px;
     font-family: Arial;
-    color: #ac8971;
+    color: whitesmoke;
     font-size: 36px;
-    background: #494949;
+    background: black;
     padding: 11px 20px 10px 20px;
     text-decoration: none;
 
@@ -54,8 +54,8 @@
    
   }
   .Ingreso:hover {
-    color: #494949;
-    background: #ac8971;
+    color: black;
+    background: #c4c4c4;
     border-color: #43312f;
     text-transform: uppercase;
     transition: all 0.2s ease 0s;

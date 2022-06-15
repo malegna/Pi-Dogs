@@ -1,9 +1,9 @@
 .card {
-    background-color: #ac8971;
+    background-color: #c4c4c4;
     text-decoration: "none";
     border-radius: 0.3vw;
     width: 20vw;
-    border: .1em solid #ac8971;
+    border: .1em solid whitesmoke;
     display: flex;
     flex-direction: column;
     justify-items: center;
@@ -27,7 +27,7 @@
     margin: 0.2vw;
     height: 60vh;
     flex-grow: 3;
-    background-color: #e0c5ac;
+    background-color: #D9D9D9;
     height: 55vh;
     border: .1em solid #e0c5ac;
   }
