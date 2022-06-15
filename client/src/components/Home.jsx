@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import Card from './Card.jsx';
 import Paginado from './Paginado';
 import SearchBar from './SearchBar';
+import Navbar from './Navbar';
 import "./Home.css";
 
 
@@ -78,25 +79,11 @@ export default function Home (){
 
     return (
         <div>
-            <div className='Nav'>
-            <div className='Logo'>
-                <Link to = '/home'>
-            <h3>ZEUS APP</h3>
-            </Link>
-
-            <Link to ='/dog'>
-            <div className="centro">
-              <h6>CREAR NUEVA RAZA</h6>
-            </div>
-            </Link>
-            </div>
-            </div>
-            
-            
+            <Navbar/>
             <div className='TopBoard'>
-            <div className='Reset'>
-            <button onClick={e=>{handleClick(e)}}>
-                Volver a Cargar Perros</button>
+            <div>
+            <button className='Reset' onClick={e=>{handleClick(e)}}>
+                Volver a Cargar Razas </button>
                 </div>
             <div>
 

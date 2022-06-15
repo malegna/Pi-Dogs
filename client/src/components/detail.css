@@ -1,10 +1,10 @@
 .detail {
-    background-color: #ac8971;
+    background-color: #c4c4c4;
     text-decoration: "none";
     border-radius: 1vw;
     width: 40vw;
-    border: .1em solid #ac8971;
-    display: flex;
+    border: .1em solid whitesmoke;
+    display:block;
     flex-direction: center;
     justify-items: center;
     align-content: center;
@@ -13,14 +13,21 @@
     margin: auto;
     height: 80vh;
     flex-grow: 2;
-    margin-top: 70px;
-   
+    margin-top: 20px;
   }
+
+.detail h1 {
+  padding: 0px;
+    margin-top: 10px;
+    font-family: 'Abril Fatface';
+    text-decoration: none;
+    color: black;
+}
 .img-dogs {
     align-self: center;
     border-radius: 30px;
-    width: 500px;
-    height: 350px;
+    width: 250px;
+    height: 200px;
     padding: .51em;
     text-decoration: "none";
   }

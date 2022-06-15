@@ -5,3 +5,16 @@
     align-items: center;
     justify-content: center;
   }
+
+.Search button[type="submit"] {
+    margin: 1px;
+    background-color: #494949;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: center;
+    margin-left: 5px;
+
+  }

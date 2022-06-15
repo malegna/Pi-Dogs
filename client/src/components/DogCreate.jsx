@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { postDog, getTemperaments } from '../actions/index';
 import { useDispatch, useSelector } from 'react-redux';
+import NavBar from './Navbar';
 import "./DogCreate.css";
 
 function validate(input){
@@ -164,9 +165,11 @@ export default function CreateDogs(){
     
 
     return (
+        <div>
+        <NavBar/>
         <div className='formulario'>
-            <Link to= '/home'> <button>Volver</button> </Link>
-            <h1>Crea tu Personaje!</h1>
+            
+            <h1>¡Crea un nueva Raza!</h1>
 
             <form onSubmit={(e) => handlerSubmit(e)}>
                
@@ -279,9 +282,11 @@ export default function CreateDogs(){
                      {errors.img && <p className="error">{errors.img}</p>}
                 </div>
 
-                <button type='submit'>Crear Personaje</button>
+                <button type='submit'>Crear Raza</button>  
+                <Link to= '/home'> <button className='botonV'>Volver</button> </Link>
             </form>
             
+        </div>
         </div>
     )
 
