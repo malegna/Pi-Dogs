@@ -1,6 +1,6 @@
 .card {
     background-color: #c4c4c4;
-    text-decoration: "none";
+    text-decoration:none;
     border-radius: 0.3vw;
     width: 20vw;
     border: .1em solid whitesmoke;
@@ -13,9 +13,10 @@
     margin: 0.2vw;
     height: 60vh;
     flex-grow: 2;
+    
   }
   .card:hover{
-    text-decoration: "none";
+    text-decoration: none;
     border-radius: 0.3vw;
     width: 20vw;
     display: flex;
@@ -34,8 +35,28 @@
 .img-dog {
     align-self: center;
     border-radius: 30px;
-    width: 300px;
+    width: 200px;
     height: 200px;
     padding: .51em;
     text-decoration: "none";
   }
+.nameCard{
+    padding: 0px;
+    margin-top: 10px;
+    font-family: 'Abril Fatface';
+    text-decoration: none;
+    color: black;
+}
+.nameCard a:Link{
+  text-decoration: none;
+}
+.card p {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    color: black;
+}
+.AllTemps {
+  text-decoration: "none";
+  color: black;
+}

@@ -8,10 +8,12 @@ body{
   background-size: cover;
   max-height: 100vh;
   margin: 0;
+  text-decoration: none;
   /* justify-content: center; */
 }
 .App {
   text-align: center;
+  text-decoration: none;
 }
 
 .App-logo {

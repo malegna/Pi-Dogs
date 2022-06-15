@@ -1,10 +1,15 @@
 .todos {
     display: flex;
     flex-flow: row wrap;
+    text-decoration: none;
     background: whitesmoke;
     justify-content: center;
     align-items: center;
     padding: 0.5em 1em;
+    
+  }
+  .decoration a:Link{
+    text-decoration: none;
   }
 /*   
   .Filter {
@@ -43,12 +48,48 @@
     flex-direction: row;
     justify-content: center;
     list-style:none;
-    
   }
   .Reset:hover {
     background: #D9D9D9;
     color: #43312f;
     width: 10px 10px;
+  }
+  .Numbers {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 15px;
+  }
+  
+  .Num {
+    margin: 2px;
+    background-color: #494949;
+    color: whitesmoke;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: left;
+    width: 3em;
+  }
+  
+  .Num:hover {
+    background: whitesmoke;
+    color: #494949;
+  
+    text-decoration: none;
+  }
+  .selectedPage {     
+    margin: 2px;
+    background-color: whitesmoke;
+    color: #494949;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: left;
+    width: 3em;
+  
   }
   .center {
   padding: 1em;
@@ -84,13 +125,16 @@
   display: flex;
   flex-direction: row;
   margin-bottom: -40px;
-
+}
+.Logo a:Link{
+  text-decoration: none;
 }
 .centro{
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-left: 45px;
+  text-decoration: none;
 
 }
 

@@ -80,7 +80,9 @@ export default function Home (){
         <div>
             <div className='Nav'>
             <div className='Logo'>
+                <Link to = '/home'>
             <h3>ZEUS APP</h3>
+            </Link>
 
             <Link to ='/dog'>
             <div className="centro">
@@ -89,7 +91,8 @@ export default function Home (){
             </Link>
             </div>
             </div>
-
+            
+            
             <div className='TopBoard'>
             <div className='Reset'>
             <button onClick={e=>{handleClick(e)}}>
@@ -154,7 +157,7 @@ export default function Home (){
                     allDogs
                     .filter((dog) => dog.temperament?.includes(temperamentSelected)) // filtra los temperamentos seleccinados y que se hayn guardado en el estado 
                     .map((element) => (
-                        <div>
+                        <div className='decoration'>
                         <Link to = {"/dogs/"+ element.id}>
                         <Card
                         name={element.name} 
@@ -167,14 +170,17 @@ export default function Home (){
                     )) :
                    currentDogs?.map((element) =>{
                         return (
-                            <div>
+                            <div className='decoration'>
                                 <Link to = {"/dogs/"+ element.id}>
+                                    
                                 <Card name={element.name} 
                                 img={element.img} 
                                 weigth={!element.create ? element.weight + ` kg`: `${element.weight.min ? element.weight.min : ""} ${
                                 element.weight.max ? " - " + element.weight.max : ""}  kg`} 
                                 temperament={!element.create ? element.temperament + ' ' : element.temperaments.map(el => el.name + (' ,'))} key={element.id}/>
+                                
                                 </Link>
+
                             </div>
                         )
                     })
