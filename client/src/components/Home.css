@@ -6,23 +6,23 @@
     align-items: center;
     padding: 0.5em 1em;
   }
-  
+/*   
   .Filter {
     padding: 10px 10px;
     flex-direction:column;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+  } */
   
-  
+/*   
   .Order {
     padding: 10px 10px;
     flex-direction: row;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+  } */
   
   .Reset {
     margin: 5px;
@@ -60,15 +60,57 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    box-shadow: 2px 5px 16px #43312f;
+    justify-content: space-between;
+    box-shadow: 2px 5px 5px  #43312f;
+    margin-top: -40px;
+    margin-bottom: 10px;
   }
-.left {
-  font-size: 20px;
-}
+  .Nav h3{
+    display:inline-block;    
+  }
+  .Nav h6 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+    margin-top: 65px;
+  }
+  
 .Logo {
   font-family: "Abril Fatface", cursive;
   font-size: 40px;
   display: flex;
   flex-direction: row;
+  margin-bottom: -40px;
+
+}
+.centro{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 45px;
+
+}
+
+.TopBoard{
+  display: flex;
+  flex-direction: row;
+  background: #cdf3f3;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em 1em;
+}
+.Filter {
+  padding: 0em 1em;
+  display: flex;
+  flex-direction: row;
+  float:right;
+  margin-top: 13px;
+}
+.Order {
+  padding: 0em 1em;
+  display: flex;
+  flex-direction: row;
+  float: right;
+  margin-top: 13px;
 }

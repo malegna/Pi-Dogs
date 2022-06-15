@@ -80,34 +80,24 @@ export default function Home (){
         <div>
             <div className='Nav'>
             <div className='Logo'>
+            <h3>ZEUS APP</h3>
+
             <Link to ='/dog'>
-            <div className="Left">
-              <h5>CREAR NUEVA RAZA</h5>
+            <div className="centro">
+              <h6>CREAR NUEVA RAZA</h6>
             </div>
-            <div>
-          DoggoLand
-          </div>
             </Link>
             </div>
             </div>
-            
-            <div className='center'>
-            <h1>PAGINA DE PERRITOS</h1> 
-            </div>
 
+            <div className='TopBoard'>
             <div className='Reset'>
             <button onClick={e=>{handleClick(e)}}>
                 Volver a Cargar Perros</button>
                 </div>
             <div>
 
-            <div className='Order'>
-                <select onChange = {e =>handlerSortAsDe(e)}>
-                    <option value="">Orden Alfabetico</option>
-                    <option value= 'asc'> A a Z</option> 
-                    <option value = 'des'> Z a A</option>
-                </select>
-               
+                <div className='Order'>  
                 <select onChange = {e =>handlerWeight(e)}>
                     <option value="">Orden por Peso</option>
                     <option value= 'LIGHTEST'> Mas Liviano a mas Pesado</option> 
@@ -115,6 +105,23 @@ export default function Home (){
                 </select>
                 </div>
 
+
+                    <div className='Filter'>
+                <select onChange={e => handlerFilterCreated(e) }>
+                <option value="">Orden Por Razas</option>
+                    <option value = 'all'>Todas las Razas</option>
+                    <option value = 'created'>Creados</option>
+                    <option value = 'original'>Existente(Traidos de la api)</option>
+                </select>
+                </div>
+
+                <div className='Order'>
+                <select onChange = {e =>handlerSortAsDe(e)}>
+                    <option value="">Orden Alfabetico</option>
+                    <option value= 'asc'> A a Z</option> 
+                    <option value = 'des'> Z a A</option>
+                </select>
+                </div>
 
                 <div className='Filter'>
                 <select onChange={(e)=>temperamentChange(e)}>
@@ -130,13 +137,10 @@ export default function Home (){
                 </select>
                 </div>
 
-                    <div>
-                <select onChange={e => handlerFilterCreated(e) }>
-                <option value="">Orden Por Razas</option>
-                    <option value = 'all'>Todas las Razas</option>
-                    <option value = 'created'>Creados</option>
-                    <option value = 'original'>Existente(Traidos de la api)</option>
-                </select>
+              
+               
+                <SearchBar />
+                </div>
                 </div>
 
                 <Paginado
@@ -144,10 +148,7 @@ export default function Home (){
                 allDogs = {allDogs.length}
                 paginado ={paginado}
                 />
-               
-                <SearchBar />
-                </div>
-                
+
                 <div className='todos'>
                 { temperamentSelected ? temperamentSelected &&
                     allDogs
